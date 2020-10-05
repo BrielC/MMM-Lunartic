@@ -1396,9 +1396,9 @@ console.log(img.src);
                     if (config.language == "de") {
                         var dateTimeString = moment.unix(this.info[2].fm).format("DD MMM YYYY");
                     } else {
-                        var dateTimeString = moment.unix(this.info[2].fm).format("MMM DD, YYYY");
+                        var dateTimeString = moment.unix(this.info[2].fm).format("DD MMM YYYY");
                     }
-                    nextFullMoon.classList.add("xsmall", "bright", "nextFullMoon");
+                    nextFullMoon.classList.add("small", "dimmed", "nextFullMoon");
                     //	console.log (Lunartic); // checking data
 
 
@@ -1406,10 +1406,10 @@ console.log(img.src);
                 //    console.log(new Date().valueOf()); // unix timestamp for right now
                     // compare date of next full moon to current date and time
                     if (this.info[2].fm * 1000 < new Date().valueOf()) {
-                    nextFullMoon.innerHTML = this.translate("The last full moon was ") + dateTimeString;
+                    nextFullMoon.innerHTML = this.translate("Last full moon was ") + dateTimeString;
                     wrapper.appendChild(nextFullMoon);
                   } else {
-                    nextFullMoon.innerHTML = this.translate("The next full moon is ") + dateTimeString;
+                    nextFullMoon.innerHTML = this.translate("Next full moon is ") + dateTimeString;
                     wrapper.appendChild(nextFullMoon);
               }
 
@@ -1423,23 +1423,23 @@ console.log(img.src);
                     } else {
                         var dateTimeString = moment.unix(this.info[3].nnm).format("MMM DD, YYYY");
                     }
-                    nextNewMoon.classList.add("xsmall", "bright", "nextNewMoon");
-                    nextNewMoon.innerHTML = this.translate("The next new moon is ") + dateTimeString;
+                    nextNewMoon.classList.add("small", "dimmed", "nextNewMoon");
+                    nextNewMoon.innerHTML = this.translate("Next new moon is ") + dateTimeString;
                     wrapper.appendChild(nextNewMoon);
                 }
 
                 if (this.activeItem == 4) {
                     // how old the current moon is
                     var age = document.createElement("div");
-                    age.classList.add("xsmall", "bright", "age");
-                    age.innerHTML = this.translate("The current moon is ") + Math.round(this.info[4].age) + this.translate(" days old");
+                    age.classList.add("small", "dimmed", "age");
+                    age.innerHTML = this.translate("Current moon is ") + Math.round(this.info[4].age) + this.translate(" days old");
                     wrapper.appendChild(age);
                 }
 
                 if (this.activeItem == 5) {
                     // how much of the moon is illuminated
                     var illumination = document.createElement("div");
-                    illumination.classList.add("xsmall", "bright", "illumination");
+                    illumination.classList.add("small", "dimmed", "illumination");
                     illumination.innerHTML = this.translate("The moon is ") + Math.round(this.info[5].ill) + this.translate("% illuminated");
                     wrapper.appendChild(illumination);
                 }
@@ -1447,7 +1447,7 @@ console.log(img.src);
                 if (this.activeItem == 6) {
                     // waxing, waning, etc..
                     var stage = document.createElement("div");
-                    stage.classList.add("xsmall", "bright", "stage");
+                    stage.classList.add("small", "dimmed", "stage");
 
                     if (Math.round(this.info[5].ill) < 1 && this.info[6] == "waning") {
                         stage.innerHTML = this.translate("New Moon - No visible moon");
@@ -1519,25 +1519,25 @@ console.log(img.src);
         } else if (this.config.mode == "static") {
 
             // distance from Earth's core
-            var DFCOE = document.createElement("div");
-                DFCOE.classList.add("xsmall", "bright", "DFCOE");
-            if (this.config.distance == "miles") {
-                DFCOE.innerHTML = this.translate("Distance from Earth's core = ") + (Math.round(this.info[0].dfcoe * 0.62137) + '').replace(/(\d)(?=(\d{3})+$)/g, '$1,') + " miles";
-            } else {
-                DFCOE.innerHTML = this.translate("Distance from Earth's core = ") + (Math.round(this.info[0].dfcoe) + '').replace(/(\d)(?=(\d{3})+$)/g, '$1,') + " km";
-            }
-            wrapper.appendChild(DFCOE);
+  //          var DFCOE = document.createElement("div");
+  //              DFCOE.classList.add("xsmall", "bright", "DFCOE");
+  //          if (this.config.distance == "miles") {
+  //              DFCOE.innerHTML = this.translate("Distance from Earth's core = ") + (Math.round(this.info[0].dfcoe * 0.62137) + '').replace(/(\d)(?=(\d{3})+$)/g, '$1,') + " miles";
+  //          } else {
+  //              DFCOE.innerHTML = this.translate("Distance from Earth's core = ") + (Math.round(this.info[0].dfcoe) + '').replace(/(\d)(?=(\d{3})+$)/g, '$1,') + " km";
+  //          }
+  //          wrapper.appendChild(DFCOE);
 
 
             // distance from the sun
-            var DFS = document.createElement("div");
-                DFS.classList.add("xsmall", "bright", "DFS");
-            if (this.config.distance == "miles") {
-                DFS.innerHTML = this.translate("Distance from sun = ") + (Math.round(this.info[1].dfs * 0.62137) + '').replace(/(\d)(?=(\d{3})+$)/g, '$1,') + " miles";
-            } else {
-                DFS.innerHTML = this.translate("Distance from sun = ") + (Math.round(this.info[1].dfs) + '').replace(/(\d)(?=(\d{3})+$)/g, '$1,') + " km";
-            }
-            wrapper.appendChild(DFS);
+//            var DFS = document.createElement("div");
+//                DFS.classList.add("xsmall", "bright", "DFS");
+//            if (this.config.distance == "miles") {
+//                DFS.innerHTML = this.translate("Distance from sun = ") + (Math.round(this.info[1].dfs * 0.62137) + '').replace(/(\d)(?=(\d{3})+$)/g, '$1,') + " miles";
+//            } else {
+//                DFS.innerHTML = this.translate("Distance from sun = ") + (Math.round(this.info[1].dfs) + '').replace(/(\d)(?=(\d{3})+$)/g, '$1,') + " km";
+//            }
+//            wrapper.appendChild(DFS);
 
 
             // Next full moon date
@@ -1545,18 +1545,18 @@ console.log(img.src);
             if (config.language == "de") {
                 var dateTimeString = moment.unix(this.info[2].fm).format("DD MMM YYYY");
             } else {
-                var dateTimeString = moment.unix(this.info[2].fm).format("MMM DD, YYYY");
+                var dateTimeString = moment.unix(this.info[2].fm).format("DD MMM YYYY");
             }
-            nextFullMoon.classList.add("xsmall", "bright", "nextFullMoon");
+            nextFullMoon.classList.add("small", "dimmed", "nextFullMoon");
             //	console.log (Lunartic); // checking data
 
 
             // Because next FM data doesn't occur till after the new moon
             if (this.info[2].fm * 1000 < new Date().valueOf()) {
-                nextFullMoon.innerHTML = this.translate("The last full moon was ") + dateTimeString;
+                nextFullMoon.innerHTML = this.translate("Last full moon was ") + dateTimeString;
                 wrapper.appendChild(nextFullMoon);
             } else {
-                nextFullMoon.innerHTML = this.translate("The next full moon is ") + dateTimeString;
+                nextFullMoon.innerHTML = this.translate("Next full moon is ") + dateTimeString;
                 wrapper.appendChild(nextFullMoon);
             }
 
@@ -1566,91 +1566,91 @@ console.log(img.src);
             if (config.language == "de") {
                 var dateTimeString = moment.unix(this.info[3].nnm).format("DD MMM YYYY");
             } else {
-                var dateTimeString = moment.unix(this.info[3].nnm).format("MMM DD, YYYY");
+                var dateTimeString = moment.unix(this.info[3].nnm).format("DD MMM YYYY");
             }
-            nextNewMoon.classList.add("xsmall", "bright", "nextNewMoon");
-            nextNewMoon.innerHTML = this.translate("The next new moon is ") + dateTimeString;
+            nextNewMoon.classList.add("small", "dimmed", "nextNewMoon");
+            nextNewMoon.innerHTML = this.translate("Next new moon is ") + dateTimeString;
             wrapper.appendChild(nextNewMoon);
 
 
             // how old the current moon is
-            var age = document.createElement("div");
-            age.classList.add("xsmall", "bright", "age");
-            age.innerHTML = this.translate("The current moon is ") + Math.round(this.info[4].age) + this.translate(" days old");
-            wrapper.appendChild(age);
+//            var age = document.createElement("div");
+//            age.classList.add("xsmall", "bright", "age");
+//            age.innerHTML = this.translate("The current moon is ") + Math.round(this.info[4].age) + this.translate(" days old");
+//            wrapper.appendChild(age);
 
 
             // how much of the moon is illuminated
             var illumination = document.createElement("div");
-            illumination.classList.add("xsmall", "bright", "illumination");
+            illumination.classList.add("small", "dimmed", "illumination");
             illumination.innerHTML = this.translate("The moon is ") + Math.round(this.info[5].ill) + this.translate("% illuminated");
             wrapper.appendChild(illumination);
 
 
             // waxing, waning, etc..
-            var stage = document.createElement("div");
-                stage.classList.add("xsmall", "bright", "stage");
-
-            if (Math.round(this.info[5].ill) < 1 && Lunartic.stage == "waning") {
-                stage.innerHTML = this.translate("New Moon - No visible moon");
-                wrapper.appendChild(stage);
-
-            } else if (Math.round(this.info[5].ill) < 1 && this.info[6].stage == "waxing") {
-                stage.innerHTML = this.translate("New Moon - No visible moon");
-                wrapper.appendChild(stage);
-
-            } else if (Math.round(this.info[5].ill) > 1 && Math.round(this.info[5].ill) < 50 && this.info[6].stage == "waxing") {
-                stage.innerHTML = this.translate("Waxing Crescent Moon");
-                wrapper.appendChild(stage);
-
-            } else if (Math.round(this.info[5].ill) == 50 && this.info[6].stage == "waxing") {
-                stage.innerHTML = this.translate("First Quarter Half Moon");
-                wrapper.appendChild(stage);
-
-            } else if (Math.round(this.info[5].ill) > 50 && Math.round(this.info[5].ill) < 100 && this.info[6].stage == "waxing") {
-                stage.innerHTML = this.translate("Waxing Gibbous Moon");
-                wrapper.appendChild(stage);
-
-            } else if (Math.round(this.info[5].ill) == 100 && this.info[6].stage == "waxing") {
-                stage.innerHTML = this.translate("Full Moon");
-                wrapper.appendChild(stage);
-
-                // create audio, only on full moon, wolf howling
-             if (this.config.sounds == "yes") {
-                var sound = new Audio();
-                sound.src = 'modules/MMM-Lunartic/sounds/wolf.mp3';
-                sound.loop = false;
-                sound.play();
-              }
-
-            } else if (Math.round(this.info[5].ill) == 100 && this.info[6].stage == "waning") {
-                stage.innerHTML = this.translate("Full Moon");
-                wrapper.appendChild(stage);
-
-                // create audio, only on full moon, wolf howling
-             if (this.config.sounds == "yes") {
-                var sound = new Audio();
-                sound.src = 'modules/MMM-Lunartic/sounds/wolf.mp3';
-                sound.loop = false;
-                sound.play();
-              }
-
-            } else if (Math.round(this.info[5].ill) <= 100 && Math.round(this.info[5].ill) > 50 && this.info[6].stage == "waning") {
-                stage.innerHTML = this.translate("Waning Gibbous Moon");
-                wrapper.appendChild(stage);
-
-            } else if (Math.round(this.info[5].ill) == 50 && this.info[6].stage == "waning") {
-                stage.innerHTML = this.translate("Third Quarter Half Moon");
-                wrapper.appendChild(stage);
-
-            } else if (Math.round(this.info[5].ill) < 50 && Math.round(this.info[5].ill) >= 1 && this.info[6].stage == "waning") {
-                stage.innerHTML = this.translate("Waning Crescent Moon");
-                wrapper.appendChild(stage);
-
-            }  else if (Math.round(this.info[5].ill) < 1) {
-                stage.innerHTML = this.translate("New Moon - No visible moon");
-                wrapper.appendChild(stage);
-            }
+//            var stage = document.createElement("div");
+//                stage.classList.add("xsmall", "bright", "stage");
+//
+//            if (Math.round(this.info[5].ill) < 1 && Lunartic.stage == "waning") {
+//                stage.innerHTML = this.translate("New Moon - No visible moon");
+//                wrapper.appendChild(stage);
+//
+//            } else if (Math.round(this.info[5].ill) < 1 && this.info[6].stage == "waxing") {
+//                stage.innerHTML = this.translate("New Moon - No visible moon");
+//                wrapper.appendChild(stage);
+//
+//            } else if (Math.round(this.info[5].ill) > 1 && Math.round(this.info[5].ill) < 50 && this.info[6].stage == "waxing") {
+//                stage.innerHTML = this.translate("Waxing Crescent Moon");
+//                wrapper.appendChild(stage);
+//
+//            } else if (Math.round(this.info[5].ill) == 50 && this.info[6].stage == "waxing") {
+//                stage.innerHTML = this.translate("First Quarter Half Moon");
+//                wrapper.appendChild(stage);
+//
+//            } else if (Math.round(this.info[5].ill) > 50 && Math.round(this.info[5].ill) < 100 && this.info[6].stage == "waxing") {
+//                stage.innerHTML = this.translate("Waxing Gibbous Moon");
+//                wrapper.appendChild(stage);
+//
+//            } else if (Math.round(this.info[5].ill) == 100 && this.info[6].stage == "waxing") {
+//                stage.innerHTML = this.translate("Full Moon");
+//                wrapper.appendChild(stage);
+//
+//                // create audio, only on full moon, wolf howling
+//             if (this.config.sounds == "yes") {
+//                var sound = new Audio();
+//                sound.src = 'modules/MMM-Lunartic/sounds/wolf.mp3';
+//                sound.loop = false;
+//                sound.play();
+//              }
+//
+//            } else if (Math.round(this.info[5].ill) == 100 && this.info[6].stage == "waning") {
+//                stage.innerHTML = this.translate("Full Moon");
+//                wrapper.appendChild(stage);
+//
+//                // create audio, only on full moon, wolf howling
+//             if (this.config.sounds == "yes") {
+//                var sound = new Audio();
+//                sound.src = 'modules/MMM-Lunartic/sounds/wolf.mp3';
+//                sound.loop = false;
+//                sound.play();
+//              }
+//
+//            } else if (Math.round(this.info[5].ill) <= 100 && Math.round(this.info[5].ill) > 50 && this.info[6].stage == "waning") {
+//                stage.innerHTML = this.translate("Waning Gibbous Moon");
+//                wrapper.appendChild(stage);
+//
+//            } else if (Math.round(this.info[5].ill) == 50 && this.info[6].stage == "waning") {
+//                stage.innerHTML = this.translate("Third Quarter Half Moon");
+//                wrapper.appendChild(stage);
+//
+//            } else if (Math.round(this.info[5].ill) < 50 && Math.round(this.info[5].ill) >= 1 && this.info[6].stage == "waning") {
+//                stage.innerHTML = this.translate("Waning Crescent Moon");
+//                wrapper.appendChild(stage);
+//
+//            }  else if (Math.round(this.info[5].ill) < 1) {
+//                stage.innerHTML = this.translate("New Moon - No visible moon");
+//                wrapper.appendChild(stage);
+//            }
 
         } // end of static mode
 
