@@ -43,8 +43,10 @@ The moon will be animated. See picture below.
 * Annotated .css file included for aligning and coloring text and header.
 
 ## Installation
-
-* `git clone https://github.com/mykle1/MMM-Lunartic` into the `~/MagicMirror/modules` directory.
+```
+cd ~/MagicMirror/modules
+git clone https://github.com/BrielC/MMM-Lunartic
+```
 
 * No API key needed! (It's my API) No dependencies needed! No kidding!
 
@@ -53,15 +55,14 @@ The moon will be animated. See picture below.
 
     {
             disabled: false,
+	    header: "MOON PHASES"
             module: 'MMM-Lunartic',
-            position: 'bottom_center', // Best in left, center, or right regions
+            position: 'top_left', // Best in left, center, or right regions
             config: {
-                mode: "rotating", // rotating or static
+                mode: "static", // rotating or static
                 image: "current", // animation, current, DayNight or static
-                distance: "miles", // miles or km
-		    sounds: "yes", // howling wolf, only on a full moon
-                useHeader: false, // true if you want a header
-                header: "The Lunartic is in my head", // Any text you want
+                distance: "km", // miles or km
+	    	sounds: "no", // howling wolf, only on a full moon
                 maxWidth: "300px",
                 animationSpeed: 0,
                 rotateInterval: 15000,
