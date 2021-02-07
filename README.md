@@ -62,7 +62,7 @@ git clone https://github.com/BrielC/MMM-Lunartic
                 mode: "static", // rotating or static
                 image: "current", // animation, current, DayNight or static
                 distance: "km", // miles or km
-	    	sounds: "no", // howling wolf, only on a full moon
+		sounds: "no", // howling wolf, only on a full moon
                 maxWidth: "300px",
                 animationSpeed: 0,
                 rotateInterval: 15000,
