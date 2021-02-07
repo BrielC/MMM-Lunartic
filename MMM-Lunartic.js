@@ -1174,19 +1174,19 @@ Module.register("MMM-Lunartic", {
            }
 
            if (Math.round(this.info[5].ill) == 23 && this.info[6].stage == "waning") {
-            img.src = "modules/MMM-Lunartic/pix/wanecres20.png";
+            img.src = "modules/MMM-Lunartic/pix/wanecres24.png";
             pic.appendChild(img);
             wrapper.appendChild(pic);
           }
 
           if (Math.round(this.info[5].ill) == 22 && this.info[6].stage == "waning") {
-           img.src = "modules/MMM-Lunartic/pix/wanecres20.png";
+           img.src = "modules/MMM-Lunartic/pix/wanecres24.png";
            pic.appendChild(img);
            wrapper.appendChild(pic);
          }
 
          if (Math.round(this.info[5].ill) == 21 && this.info[6].stage == "waning") {
-          img.src = "modules/MMM-Lunartic/pix/wanecres20.png";
+          img.src = "modules/MMM-Lunartic/pix/wanecres19.png";
           pic.appendChild(img);
           wrapper.appendChild(pic);
         }
@@ -1574,10 +1574,10 @@ console.log(img.src);
 
 
             // how old the current moon is
-//            var age = document.createElement("div");
-//            age.classList.add("xsmall", "bright", "age");
-//            age.innerHTML = this.translate("The current moon is ") + Math.round(this.info[4].age) + this.translate(" days old");
-//            wrapper.appendChild(age);
+            var age = document.createElement("div");
+            age.classList.add("xsmall", "bright", "age");
+            age.innerHTML = this.translate("The current moon is ") + Math.round(this.info[4].age) + this.translate(" days old");
+            wrapper.appendChild(age);
 
 
             // how much of the moon is illuminated
