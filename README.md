@@ -55,14 +55,14 @@ git clone https://github.com/BrielC/MMM-Lunartic
 
     {
             disabled: false,
-	    header: "MOON PHASES"
+	    	header: "MOON PHASES"
             module: 'MMM-Lunartic',
             position: 'top_left', // Best in left, center, or right regions
             config: {
                 mode: "static", // rotating or static
                 image: "current", // animation, current, DayNight or static
                 distance: "km", // miles or km
-		sounds: "no", // howling wolf, only on a full moon
+			sounds: "no", // howling wolf, only on a full moon
                 maxWidth: "300px",
                 animationSpeed: 0,
                 rotateInterval: 15000,
